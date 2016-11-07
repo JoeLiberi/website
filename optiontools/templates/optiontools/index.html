@@ -1,0 +1,27 @@
+<h1>Option Tools</h1>
+<h2> Covered Call Calculator </h2>
+
+<script>
+// function calcCoveredCall(a,b,c,d) {
+//     return a - b + c - d;
+// }
+// document.getElementById("results").innerHTML = calcCoveredCall((price_poc * 100),(price_us * 100),(strike_price * 100),3.7);
+</script>
+
+<form method="post" action="{% url 'optiontools:index'%}">
+	{% csrf_token %}
+	Security Name:
+	<input type="text" name="security_name"><br>
+	Security Symbol:
+	<input type="text" name="security_symbol"><br>
+	Price Per Option Contract:
+	<input type="int" name="price_poc"><br>
+	Price for Underlying Security:
+	<input type="int" name="price_us"><br>
+	Strike Price:
+	<input type="int" name="strike_price"><br>
+	Commision:
+	<input type="int" name="comish"><br>
+</form>
+
+<input type="submit" value="Submit" />
