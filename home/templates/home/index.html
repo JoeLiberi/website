@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% if list_of_objs %}
+		{% for obj in list_of_objs|slice:":1" %}
+			<h2> Posts </h2>
+			{% for post in obj %}
+				<li><a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a></li>
+			{% endfor %}
+		{% endfor %}
+		{% for obj in list_of_objs|slice:"1:2" %}
+			<h2> Positions </h2>
+			{% for pos in obj %}
+				<p>{{ pos.security_symbol }}</p>
+			{% endfor %}
+		{% endfor %}
+
+	{% endif %}
+{% endblock %}

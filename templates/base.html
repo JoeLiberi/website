@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+	<head>
+	    <title>{% block title %} My Home Page {% endblock %}</title>
+		<!-- Bootstrap -->
+		<link href="{% static 'css/bootstrap-fluid-adj.css' %}" rel="stylesheet">
+		<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+		<link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+      
+	</head>
+	<body>
+		<div class="page-header">
+			<h1>My Home Page</h1>
+		</div>
+        {% block nav %}
+        <div class="nav-collapse collapse">
+	        <ul id="nav">
+	            <li>{% block nav-home %}<a href="{% url 'home:index' %}">Home</a>{% endblock %}</li>
+	            <li>{% block nav-about %}<a href="{% url 'optiontools:index' %}">Option Tools</a>{% endblock %}</li>
+	            <li>{% block nav-contact %}<a href="{% url 'blog:index' %}">Blog</a>{% endblock %}</li>
+	        </ul>
+        </div>
+        {% endblock %}
+		{% block content %}
+		{% endblock %}
+
+		<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	</body>
+
+	<footer>
+	    <div class="container">
+	        <p>&copy; Personal Website Awesomness</p>
+	    </div>
+	</footer>
+</html>

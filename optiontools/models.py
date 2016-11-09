@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 import datetime
-from django.forms import ModelForm
 
 # Create your models here.
 class Position(models.Model):
@@ -18,8 +17,3 @@ class Position(models.Model):
 
 	def __str__(self):
 		return self.security_symbol
-
-class PositionForm(ModelForm):
-	class Meta:
-		model = Position
-		fields = ['security_symbol', 'price_per_contract', 'price_underlying', 'strike_price', 'commission']

@@ -1,4 +1,8 @@
-<h1>{{ post.title }}</h1>
-<body>
-{{post.body}}
-</body>
+{% extends "base.html" %}
+
+{% block content %}
+	<body>
+		<h1>{{ post.title }}</h1>
+		{{post.body}}
+	</body>
+{% endblock %}
