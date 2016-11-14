@@ -2,13 +2,15 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-	<head>
-		{% block extra_head %}
-		{% endblock %}
-	</head>
-	<body>	
-		{% block content %}
-			{% if list_of_objs %}
+<head>
+	{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+	{% endblock %}
+</head>
+<body>
+	{% block content %}
+		{% if list_of_objs %}
+			<div class="container">
 				{% for obj in list_of_objs|slice:":1" %}
 					<h2> Posts </h2>
 					{% for post in obj %}
@@ -21,9 +23,9 @@
 						<p>{{ pos.security_symbol }}</p>
 					{% endfor %}
 				{% endfor %}
-
-			{% endif %}
-		{% endblock %}
-	</body>
+			</div>
+		{% endif %}
+	{% endblock %}
+</body>
 
 </html>
