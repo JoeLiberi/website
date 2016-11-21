@@ -1,0 +1,10 @@
+/* Colors */
+$bgDefault      : #20222b;
+$bgHighlight    : #5c6284;
+$colDefault     : #ecf0f1;
+$colHover       : #ffbbbc; 
+
+.navbar-inverse {
+    background-color: #20222b;
+    border-color: #5c6284;
+}

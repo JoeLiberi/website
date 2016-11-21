@@ -18,13 +18,16 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
-			<li class="navbar-brand"> <a href="{% url 'home:index' %}">Joe Liberi</a> </li>
+			</button>
+			<a class="navbar-brand" href="{% url 'home:index' %}">Joe Liberi</a>
 		</div>
-		<ul>
-			{% block nav-home %}<a href="{% url 'home:index' %}">Home</a>{% endblock %}
-			{% block nav-about %}<a href="{% url 'optiontools:index' %}">Option Tools</a>{% endblock %}
-			{% block nav-contact %}<a href="{% url 'blog:index' %}">Blog</a>{% endblock %}
-		</ul>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li>{% block nav-home %}<a href="{% url 'home:index' %}">Home</a>{% endblock %}</li>
+				<li>{% block nav-about %}<a href="{% url 'optiontools:index' %}">Option Tools</a>{% endblock %}</li>
+				<li>{% block nav-contact %}<a href="{% url 'blog:index' %}">Blog</a>{% endblock %}</li>
+			</ul>
+		</div>
 	</nav>
 	<div class="container">
 		<div class="col-md-3">

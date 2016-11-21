@@ -12,7 +12,7 @@
 		{% if list_of_objs %}
 			<div class="container">
 				{% for obj in list_of_objs|slice:":1" %}
-					<h2> Posts </h2>
+					<h2> Blog </h2>
 					{% for post in obj %}
 						<li><a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a></li>
 					{% endfor %}
