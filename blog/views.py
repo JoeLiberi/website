@@ -4,17 +4,21 @@ from .models import Post
 from django.views import generic
 
 
-class IndexView(generic.ListView):
+class IndexView(generic.DetailView):
     template_name = 'blog/index.html'
     context_object_name = 'latest_post_list'
+    # model = Post
+
+    def get_object(self):
+        return Post.objects.order_by('created')
 
     def get_queryset(self):
     	""" Return the last five published blog entries """
-    	return Post.objects.order_by('created')[:5]
+    	return Post.objects.order_by('created')
 
-class DetailView(generic.DetailView):
-	model = Post
-	template_name = 'blog/detail.html'
+# class DetailView(generic.DetailView):
+# 	model = Post
+# 	template_name = 'blog/detail.html'
 
 # def index(request):
 # 	latest_post_list = Post.objects.order_by('created')[:5]
